@@ -1,0 +1,293 @@
+.settingsOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.settingsPanel {
+  background: var(--bg-elevated);
+  width: 100%;
+  max-width: 380px;
+  height: 100vh;
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease;
+  overflow-y: auto;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-soft);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.settingsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.settingsHeader h2 {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--text-secondary);
+}
+
+.settingsSection {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.settingsSection h3 {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.userProfile {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 1rem;
+  background: var(--bg-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.userAvatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.userName {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+.userEmail {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.themeOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.themeOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.themeOption:hover {
+  background: var(--bg-muted);
+}
+
+.themeOption input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--text-primary);
+}
+
+.themeOption span {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.aboutInfo {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.aboutInfo p {
+  margin: 0.5rem 0;
+}
+
+.smallText {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.settingsFooter {
+  padding: 1.5rem;
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.logoutButton {
+  width: 100%;
+  padding: 0.9rem;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 0.65rem;
+  color: var(--danger);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.logoutButton:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.logoutButton:active {
+  transform: scale(0.98);
+}
+
+.settingsPanel::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.settingsPanel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.settingsPanel::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 0.25rem;
+}
+
+.settingsPanel::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 0.85rem;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  border-radius: 1rem;
+}
+
+.textInput {
+  width: 100%;
+  padding: 0.9rem 0.95rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.75rem;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: var(--border-strong);
+  background: var(--bg-muted);
+}
+
+.uploadRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.uploadButton {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 0.7rem 1.05rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.uploadButton:hover {
+  background: var(--bg-input);
+  border-color: var(--border-strong);
+}
+
+.saveButton {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.95rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 12px 24px rgba(16, 163, 127, 0.35);
+  width: 100%;
+}
+
+.saveButton:hover {
+  background: var(--accent-strong);
+}
